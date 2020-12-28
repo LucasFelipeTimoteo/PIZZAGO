@@ -1,0 +1,56 @@
+{
+  "doughs": {
+    "thin": {
+      "name": "fina",
+      "description": "Massa com menor teor calórico e menos densa. Ideal para quem está de dieta",
+      "image": "https://images.pexels.com/photos/4193873/pexels-photo-4193873.jpeg?cs=srgb&dl=pexels-ponyo-sakana-4193873.jpg&fm=jpg"
+    },
+    "traditional": {
+      "name": "tradicional",
+      "description": "Massa feita na medida perfeita. O autêntico sabor de nossa culinária",
+      "image": "https://images.pexels.com/photos/4109111/pexels-photo-4109111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "thick": {
+      "name": "grossa",
+      "description": "Para quem realmente é fã do sabor de uma boa pizza (ou quem estiver realmete com fome :p)",
+      "image": "https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    }
+  },
+
+  "sizes": {
+    "small": {
+      "name": "pequena",
+      "description": "Um lanchinho rápido e prático para matar sua fome ou levar para viagem",
+      "image": "https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "medium": {
+      "name": "media",
+      "description": "O tamanho que você já está acostumado, ideal para dividir com a família ou amigos",
+      "image": "https://images.pexels.com/photos/1049626/pexels-photo-1049626.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "large": {
+      "name": "grande",
+      "description": "Tamanho ideal para festas ou dividir entre muitas pessoas",
+      "image": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    }
+  },
+
+  "fillings": {
+    "cheese": {
+      "name": "queijo",
+      "description": "Muçarela fresca trazida diretamente do nosso fornecedor",
+      "image": "https://images.pexels.com/photos/845798/pexels-photo-845798.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "chicken": {
+      "name": "frango",
+      "description": "Frango fresco trazido direto da fazenda de nosso fornecedor",
+      "image": "https://images.pexels.com/photos/5903113/pexels-photo-5903113.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "pepperoni": {
+      "name": "calabresa",
+      "description": "Calabresa fresca trazida direto da fazenda de nosso fornecedor",
+      "image": "https://images.pexels.com/photos/4109115/pexels-photo-4109115.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    }
+  },
+  "recommendations": ["queijo", "frango", "calabresa"]
+}

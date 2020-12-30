@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useMemo, useState } from 'react'
+import React, { Suspense, useMemo, useState } from 'react'
 import { confirmCardAltName, confirmCardAltDescription } from '../../alternativeTexts/altTexts'
 import sampleImage from '../../assets/images/sample-bg.jpg'
 
@@ -15,32 +15,21 @@ import NavButtons from '../NavButtons';
 
 import useCardStyles from '../../styles/components/contentCard';
 import useTitleStyles from '../../styles/components/titlles';
-import ConfirmModalBox from '../ConfirmModalBox';
+import useIsConfirmationButtonDisabled from '../../hooks/useIsConfirmationButtonDisabled';
 
+import ConfirmModalBox from '../ConfirmModalBox';
 
 export default function Confirm({ step, prevStep, selectedDough, selectedSize, selectedFilling }) {
   const [isOpenModalBox, setIsOpenModalBox] = useState(false)
   
   const cardClasses = useCardStyles()
   const titleClasses = useTitleStyles()
-  const [isConfirmationButtonDisabled, setIsConfirmationButtonDisabled] = useState(true)
 
   const options = useMemo(() => (
     [selectedDough, selectedSize, selectedFilling]
   ), [selectedDough, selectedSize, selectedFilling])
 
-  useEffect(() => {
-    const checkIfConfirmationButtonShouldBeDisabled = () => {
-      const validator = options.map(option => (
-        Object.keys(option).length === 0 ? 'disabled' : 'enabled'
-      ))
-      const isDisabled = validator.includes('disabled')
-
-      setIsConfirmationButtonDisabled(isDisabled)
-    }
-
-    checkIfConfirmationButtonShouldBeDisabled()
-  }, [options])
+  const isConfirmationButtonDisabled = useIsConfirmationButtonDisabled(options)
 
   const handleConfirmation = () => {
     setIsOpenModalBox(true)

@@ -12,6 +12,11 @@
     }
   },
 
+  "points": {
+    "message": "Você recebeu +[N°] pontos de benefícios",
+    "number": "10"
+  },
+
   "doughs": {
     "thin": {
       "name": "fina",

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { Suspense, useEffect, useMemo, useState } from 'react'
 import { confirmCardAltName, confirmCardAltDescription } from '../../alternativeTexts/altTexts'
 import sampleImage from '../../assets/images/sample-bg.jpg'
 
@@ -25,7 +25,9 @@ export default function Confirm({ step, prevStep, selectedDough, selectedSize, s
   const cardClasses = useCardStyles()
   const titleClasses = useTitleStyles()
 
-  const options = [selectedDough, selectedSize, selectedFilling]
+  const options = useMemo(() => (
+    [selectedDough, selectedSize, selectedFilling]
+  ), [selectedDough, selectedSize, selectedFilling])
 
   useEffect(() => {
     const checkIfConfirmationButtonShouldBeDisabled = () => {

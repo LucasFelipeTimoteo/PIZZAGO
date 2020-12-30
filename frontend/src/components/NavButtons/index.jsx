@@ -46,7 +46,7 @@ export default function NavButtons({
 
         <Container className={classes.helperTextContainer}>
           <Typography variant="caption" className={classes.helperTextPoints}>
-            Se confirmar esse pedido, você receberá +10 pontos de benefícios!
+            Se confirmar esse pedido, você receberá pontos de benefícios!
           </Typography>
         </Container>
       </div>

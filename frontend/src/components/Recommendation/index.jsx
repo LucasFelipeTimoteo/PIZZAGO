@@ -44,7 +44,7 @@ export default function Recommendation({ step }) {
             recommendation.map((dayRecommendation, index) => (
               <Grid item key={dayRecommendation.name || index}>
                 <Card className={cardClasses.card}>
-                  <CardActionArea>
+                  <CardActionArea disabled>
                     <CardMedia
                       className={cardClasses.cardMedia}
                       image={dayRecommendation.image || sampleImage}

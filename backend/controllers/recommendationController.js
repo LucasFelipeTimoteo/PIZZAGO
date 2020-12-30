@@ -1,27 +1,42 @@
 const api = require('../services/api')
 
-module.exports.getRecommendation =  async (req, res) => {
-  const recommendationsList = await api.get('/recommendations')
-  const [cheese, chicken, pepperoni] = recommendationsList.data
+module.exports.getRecommendation =  async ({ res }) => {
+  const doughsMeta = await api.get('/doughs')
+  const doughsData = doughsMeta.data
+
+  const sizesMeta = await api.get('/sizes')
+  const sizesData = sizesMeta.data
+
+  const fillingsMeta = await api.get('/fillings')
+  const fillingsData = fillingsMeta.data
+
+  // pizza reoptions
+  const thinDough = doughsData.thin
+  const traditionalDough = doughsData.traditional
+
+  const mediumSize = sizesData.medium
+
+  const cheese = fillingsData.cheese
+  const chicken = fillingsData.chicken
+  const pepperoni = fillingsData.pepperoni
 
   const dayRecommendation = () => {
     const date = new Date() 
     const today = date.getDay().toString()
     
-    if(!today) {
-      return null
-    }
-
     if(today === "0" || today === "2") {
-      return cheese
+      const recommendation = [ traditionalDough, mediumSize, pepperoni ]
+      return recommendation
     }
 
     if(today === "1" || today === "3") {
-      return chicken
+      const recommendation = [ traditionalDough, mediumSize, cheese ]
+      return recommendation
     }
 
     if(today === "4" || today === "5" || today === "6") {
-      return pepperoni
+      const recommendation = [ thinDough, mediumSize, chicken ]
+      return recommendation
     }
   }
 

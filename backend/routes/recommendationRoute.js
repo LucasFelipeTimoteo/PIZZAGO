@@ -3,6 +3,6 @@ const recommendationController = require('../controllers/recommendationControlle
 
 const router = Router()
 
-router.get('/recommendations', recommendationController.getRecommendation)
+router.get('/recommendation', recommendationController.getRecommendation)
 
 module.exports = router

@@ -3,15 +3,17 @@ const cors = require('cors')
 
 const PORT = require('./PORT')
 
-const PizzaRoute = require('./routes/pizzaRoute')
+const optionsRoute = require('./routes/optionsRoute')
+const pizzaRoute = require('./routes/pizzaRoute')
 const recommendationsRoute = require('./routes/recommendationRoute')
 
 const app = express()
 
 app.use(cors())
 
+app.use(optionsRoute)
 app.use(recommendationsRoute)
-app.use(PizzaRoute)
+app.use(pizzaRoute)
 
 app.listen(PORT, () => {
   console.log(

@@ -1,4 +1,17 @@
 {
+  "options": {
+    "recomendada": {
+      "name": "recomendada",
+      "description": "Cada dia da semana oferecemos uma recomendação, que se selecionada, proporciona pontos de benefícios",
+      "image": "https://images.pexels.com/photos/2741457/pexels-photo-2741457.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    "montar": {
+      "name": "montar",
+      "description": "Monte sua própria pizza. Você pode personalizar sua pizza escolhendo a massa, tamanho e recheio",
+      "image": "https://images.pexels.com/photos/2619967/pexels-photo-2619967.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    }
+  },
+
   "doughs": {
     "thin": {
       "name": "fina",
@@ -51,6 +64,5 @@
       "description": "Calabresa fresca trazida direto da fazenda de nosso fornecedor",
       "image": "https://images.pexels.com/photos/4109115/pexels-photo-4109115.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
     }
-  },
-  "recommendations": ["queijo", "frango", "calabresa"]
+  }
 }

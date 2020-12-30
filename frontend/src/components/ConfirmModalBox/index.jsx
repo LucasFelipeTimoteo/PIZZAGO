@@ -1,11 +1,14 @@
 import React from 'react'
 import { Dialog, Typography } from '@material-ui/core'
 
-import NavButtons from '../NavButtons'
 import useModalBoxStyles from '../../styles/components/confirmModalBox'
+import usePoints from '../../hooks/usePoints'
+
+import NavButtons from '../NavButtons'
 
 export default function ConfirmModalBox({ isOpenModalBox, isRecommendation }) {
   const modalBoxClasses = useModalBoxStyles()
+  const pointsMessage = usePoints()
 
   return (
     <>
@@ -31,7 +34,7 @@ export default function ConfirmModalBox({ isOpenModalBox, isRecommendation }) {
                 Parabéns
               </Typography>
               <Typography variant="body1" component="p">
-                você recebeu +10 pontos de benefícios
+                { pointsMessage }
               </Typography>
             </>
           }

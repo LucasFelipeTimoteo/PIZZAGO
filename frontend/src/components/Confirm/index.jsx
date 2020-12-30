@@ -19,11 +19,11 @@ import ConfirmModalBox from '../ConfirmModalBox';
 
 
 export default function Confirm({ step, prevStep, selectedDough, selectedSize, selectedFilling }) {
-  const [isConfirmationButtonDisabled, setIsConfirmationButtonDisabled] = useState(true)
   const [isOpenModalBox, setIsOpenModalBox] = useState(false)
-
+  
   const cardClasses = useCardStyles()
   const titleClasses = useTitleStyles()
+  const [isConfirmationButtonDisabled, setIsConfirmationButtonDisabled] = useState(true)
 
   const options = useMemo(() => (
     [selectedDough, selectedSize, selectedFilling]
@@ -60,9 +60,9 @@ export default function Confirm({ step, prevStep, selectedDough, selectedSize, s
 
           {
             options.map((option, index) => (
-              <Grid item key={option.name || index} onClick={() => console.log(options)}>
+              <Grid item key={option.name || index}>
                 <Card className={cardClasses.card}>
-                  <CardActionArea>
+                  <CardActionArea disabled>
                     <CardMedia
                       className={cardClasses.cardMedia}
                       image={option.image || sampleImage}

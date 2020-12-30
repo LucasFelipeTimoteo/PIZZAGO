@@ -35,7 +35,7 @@ export default function Recommendation({ step }) {
   return (
     <>
       <Suspense fallback={<p>Loading data...</p>}>
-        <Typography variant="h3" component="h2" className={titleClasses.title} onClick={() => console.log(recommendation)}>
+        <Typography variant="h3" component="h2" className={titleClasses.title}>
           recomendação
         </Typography>
         <Grid container className={cardClasses.cardGroup} justify="center">

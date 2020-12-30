@@ -1,16 +1,8 @@
 const { Router } = require('express')
-const api = require('../services/api')
+const optionsController =  require('../controllers/optionsController')
 
 const router = Router()
 
-router.get('/options', async ({ res }) => {
-  const optionsMeta = await api.get('/options')
-  const optionsdata = optionsMeta.data
-  
-  const { recomendada, montar } = optionsdata
-  const options = [recomendada, montar]
-  
-  res.json(options)
-})
+router.get('/options', optionsController.getOptions)
 
 module.exports = router

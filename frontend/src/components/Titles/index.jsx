@@ -10,7 +10,7 @@ export default function Titles({ componentName }) {
       { componentName === 'Options' && 'Opções' }
       { componentName === 'Recommendation' && 'Recomendação' }
       { componentName === 'Doughs' && 'Massas' }
-      { componentName === 'Sizes' && 'Tamenhos' }
+      { componentName === 'Sizes' && 'Tamanhos' }
       { componentName === 'Fillings' && 'Recheios' }
       { componentName === "Confirm" && 'Confirmar pedido' }
     </Typography>

@@ -4,7 +4,7 @@ import { Dialog, Typography } from '@material-ui/core'
 import useModalBoxStyles from '../../styles/components/confirmModalBox'
 import usePoints from '../../hooks/usePoints'
 
-import NavButtons from '../NavButtons'
+import NavButtons from '../../components/NavButtons'
 
 export default function ConfirmModalBox({ isOpenModalBox, isRecommendation }) {
   const modalBoxClasses = useModalBoxStyles()

@@ -2,8 +2,8 @@ import React, { Suspense, useMemo, useState } from 'react'
 
 import Titles from '../../parts/Titles';
 import Cards from '../../parts/Cards';
-import NavButtons from '../NavButtons';
-import ConfirmModalBox from '../ConfirmModalBox';
+import NavButtons from '../../parts/NavButtons';
+import ConfirmModalBox from '../../parts/ConfirmModalBox';
 
 import useIsConfirmationButtonDisabled from '../../hooks/useIsConfirmationButtonDisabled';
 

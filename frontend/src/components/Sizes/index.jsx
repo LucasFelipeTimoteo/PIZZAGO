@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 
 import Titles from '../../parts/Titles';
-import Cards from '../Cards';
+import Cards from '../../parts/Cards';
 import NavButtons from '../NavButtons';
 
 import useSizes from '../../hooks/useSizes';

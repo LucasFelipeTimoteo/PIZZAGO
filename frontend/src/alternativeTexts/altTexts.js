@@ -1,4 +1,4 @@
-export const cardAltDescription = 'erro na conexão com o banco de dados. Verifique sua conexão ou recarregue'
+export const cardAltDescription = 'Erro no servidor ou banco de dados. Verifique sua conexão ou contate o suporte'
 
 export const cardAltName = 'Erro'
 

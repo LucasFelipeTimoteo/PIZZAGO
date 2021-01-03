@@ -1,6 +1,12 @@
 import React from 'react'
+
 import sampleImage from '../../assets/images/sample-bg.jpg'
-import { cardAltDescription, cardAltName } from '../../alternativeTexts/altTexts'
+import {
+  cardAltDescription,
+  cardAltName,
+  confirmCardAltName,
+  confirmCardAltDescription
+} from '../../alternativeTexts/altTexts'
 
 import {
   Card,
@@ -11,11 +17,35 @@ import {
   Typography
 } from '@material-ui/core';
 
-// import useDoughs from '../../hooks/useDoughs';
 import useCardStyles from '../../styles/components/contentCard';
 
-export default function Cards({ handleSelectedOption, pizzaOptions, handleOptionsOfOptionsComponent }) {
+export default function Cards({
+  handleSelectedOption,
+  pizzaOptions,
+  handleOptionsOfOptionsComponent,
+  type
+}) {
   const cardClasses = useCardStyles()
+
+  const altName = () => {
+    if (type === 'confirm') {
+      return confirmCardAltName
+    }
+
+    if (type === 'option') {
+      return cardAltName
+    }
+  }
+
+  const altDescription = () => {
+    if (type === 'confirm') {
+      return confirmCardAltDescription
+    }
+
+    if (type === 'option') {
+      return cardAltDescription
+    }
+  }
 
   return (
     <Grid container className={cardClasses.cardGroup} justify="center">
@@ -26,7 +56,7 @@ export default function Cards({ handleSelectedOption, pizzaOptions, handleOption
             key={pizzaOption.name || index}
             onClick={() => {
               handleSelectedOption && handleSelectedOption(pizzaOption)
-              handleOptionsOfOptionsComponent && handleOptionsOfOptionsComponent(pizzaOption.name) 
+              handleOptionsOfOptionsComponent && handleOptionsOfOptionsComponent(pizzaOption.name)
             }}
           >
             <Card className={cardClasses.card}>
@@ -34,14 +64,14 @@ export default function Cards({ handleSelectedOption, pizzaOptions, handleOption
                 <CardMedia
                   className={cardClasses.cardMedia}
                   image={pizzaOption.image || sampleImage}
-                  title={`massa ${pizzaOption.name}`}
+                  title={`massa ${pizzaOption.name}` || altName()}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    {pizzaOption.name || cardAltName}
+                    {pizzaOption.name || altName()}
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    {pizzaOption.description || cardAltDescription}
+                    {pizzaOption.description || altDescription()}
                   </Typography>
                 </CardContent>
               </CardActionArea>

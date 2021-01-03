@@ -7,7 +7,13 @@ import ConfirmModalBox from '../../parts/ConfirmModalBox';
 
 import useIsConfirmationButtonDisabled from '../../hooks/useIsConfirmationButtonDisabled';
 
-export default function Confirm({ step, prevStep, selectedDough, selectedSize, selectedFilling }) {
+export default function Confirm({ 
+  step, 
+  prevStep, 
+  selectedDough, 
+  selectedSize, 
+  selectedFilling 
+}) {
   const [isOpenModalBox, setIsOpenModalBox] = useState(false)
 
   const options = useMemo(() => (
@@ -28,7 +34,7 @@ export default function Confirm({ step, prevStep, selectedDough, selectedSize, s
     <>
       <Suspense fallback={<p>Loading data...</p>}>
         <Titles componentName="Confirm" />
-        <Cards pizzaOptions={options} />
+        <Cards pizzaOptions={options} type="confirm" />
 
         <NavButtons
           step={step}

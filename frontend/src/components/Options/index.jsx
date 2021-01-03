@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
 
-import Titles from '../Titles';
+import Titles from '../../parts/Titles';
 import Cards from '../Cards';
 import NavButtons from '../NavButtons';
 

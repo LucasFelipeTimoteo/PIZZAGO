@@ -2,7 +2,7 @@ import React, { Suspense, useState } from 'react'
 
 import Titles from '../../parts/Titles';
 import Cards from '../../parts/Cards';
-import NavButtons from '../NavButtons'
+import NavButtons from '../../parts/NavButtons';
 import ConfirmModalBox from '../../parts/ConfirmModalBox';
 
 import useRecommendation from '../../hooks/useRecommendation';

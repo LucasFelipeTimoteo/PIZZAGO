@@ -6,10 +6,16 @@ export default function useDoughs() {
 
   useEffect(() => {
     const fetchDoughs = async () => {
-      const doughsMeta = await api.get('/doughs')
-      const doughsData = doughsMeta.data
-      setDoughs(doughsData)
+      try {
+        const doughsMeta = await api.get('/doughs')
+        const doughsData = doughsMeta.data
+        setDoughs(doughsData)
+      }
+      catch (error) {
+        throw new Error(error)
+      }
     }
+
     fetchDoughs()
   }, [])
 

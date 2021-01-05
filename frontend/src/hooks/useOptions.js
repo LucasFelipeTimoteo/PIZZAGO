@@ -6,10 +6,16 @@ export default function useOptions() {
 
   useEffect(() => {
     const fetchOptions = async () => {
-      const optionsMeta = await api.get('/options')
-      const optionsData = optionsMeta.data
-      setOptions(optionsData)
+      try {
+        const optionsMeta = await api.get('/options')
+        const optionsData = optionsMeta.data
+        setOptions(optionsData)
+      }
+      catch (error) {
+        throw new Error(error)
+      }
     }
+    
     fetchOptions()
   }, [])
 

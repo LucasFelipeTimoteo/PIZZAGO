@@ -6,10 +6,16 @@ export default function usePoints() {
 
   useEffect(() => {
     const fetchPointsMessage = async () => {
-      const pointsMessageMeta = await api.get('/points')
-      const pointsMessageData = pointsMessageMeta.data
-      setPointsMessage(pointsMessageData)
+      try {
+        const pointsMessageMeta = await api.get('/points')
+        const pointsMessageData = pointsMessageMeta.data
+        setPointsMessage(pointsMessageData)
+      }
+      catch (error) {
+        throw new Error(error)
+      }
     }
+    
     fetchPointsMessage()
   }, [])
 

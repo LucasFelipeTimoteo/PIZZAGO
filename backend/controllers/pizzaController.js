@@ -1,52 +1,67 @@
 const api = require('../services/api')
 
 module.exports.getDoughs = async ({ res }) => {
-  const doughsMeta = await api.get('/doughs')
-  const doughsData = doughsMeta.data
-  
-  const thinDough = doughsData.thin
-  const traditionalDough = doughsData.traditional
-  const thickDough = doughsData.thick
+  try {
+    const doughsMeta = await api.get('/doughs')
+    const doughsData = doughsMeta.data
 
-  const doughs = [
-    thinDough,
-    traditionalDough,
-    thickDough
-  ]
+    const thinDough = doughsData.thin
+    const traditionalDough = doughsData.traditional
+    const thickDough = doughsData.thick
 
-  res.json(doughs)
+    const doughs = [
+      thinDough,
+      traditionalDough,
+      thickDough
+    ]
+
+    res.json(doughs)
+  }
+  catch (error) {
+    throw new Error(error)
+  }
 }
 
 module.exports.getSizes = async ({ res }) => {
-  const sizesMeta = await api.get('/sizes')
-  const sizesData = sizesMeta.data
-  
-  const smallSize = sizesData.small
-  const mediumSize = sizesData.medium
-  const largeSize = sizesData.large
+  try {
+    const sizesMeta = await api.get('/sizes')
+    const sizesData = sizesMeta.data
 
-  const sizes = [
-    smallSize,
-    mediumSize,
-    largeSize
-  ]
+    const smallSize = sizesData.small
+    const mediumSize = sizesData.medium
+    const largeSize = sizesData.large
 
-  res.json(sizes)
+    const sizes = [
+      smallSize,
+      mediumSize,
+      largeSize
+    ]
+
+    res.json(sizes)
+  }
+  catch (error) {
+    throw new Error(error)
+  }
 }
 
 module.exports.getFillings = async ({ res }) => {
-  const fillingsMeta = await api.get('/fillings')
-  const fillingsData = fillingsMeta.data
+  try {
+    const fillingsMeta = await api.get('/fillings')
+    const fillingsData = fillingsMeta.data
 
-  const cheese = fillingsData.cheese
-  const chicken = fillingsData.chicken
-  const pepperoni = fillingsData.pepperoni
+    const cheese = fillingsData.cheese
+    const chicken = fillingsData.chicken
+    const pepperoni = fillingsData.pepperoni
 
-  const fillings = [
-    cheese,
-    chicken,
-    pepperoni
-  ]
+    const fillings = [
+      cheese,
+      chicken,
+      pepperoni
+    ]
 
-  res.json(fillings)
+    res.json(fillings)
+  }
+  catch (error) {
+    throw new Error(error)
+  }
 }

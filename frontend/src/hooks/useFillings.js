@@ -6,10 +6,16 @@ export default function useFillings() {
 
   useEffect(() => {
     const fetchfillings = async () => {
-      const fillingsMeta = await api.get('/fillings')
-      const fillingsData = fillingsMeta.data
-      setFillings(fillingsData)
+      try {
+        const fillingsMeta = await api.get('/fillings')
+        const fillingsData = fillingsMeta.data
+        setFillings(fillingsData)
+      }
+      catch (error) {
+        throw new Error(error)
+      }
     }
+
     fetchfillings()
   }, [])
 

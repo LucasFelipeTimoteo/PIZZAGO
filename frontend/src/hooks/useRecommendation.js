@@ -6,10 +6,16 @@ export default function useRecommendation() {
 
   useEffect(() => {
     const fetchRecommendation = async () => {
-      const recommendationMeta = await api.get('/recommendation')
-      const recommendationData = recommendationMeta.data.recommendation
-      setRecommendation(recommendationData)
+      try {
+        const recommendationMeta = await api.get('/recommendation')
+        const recommendationData = recommendationMeta.data.recommendation
+        setRecommendation(recommendationData)
+      }
+      catch (error) {
+        throw new Error(error)
+      }
     }
+    
     fetchRecommendation()
   }, [])
 

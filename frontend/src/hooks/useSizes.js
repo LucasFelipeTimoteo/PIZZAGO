@@ -6,10 +6,16 @@ export default function useSizes() {
 
   useEffect(() => {
     const fetchSizes = async () => {
-      const sizesMeta = await api.get('/sizes')
-      const sizesData = sizesMeta.data
-      setSizes(sizesData)
+      try {
+        const sizesMeta = await api.get('/sizes')
+        const sizesData = sizesMeta.data
+        setSizes(sizesData)
+      }
+      catch (error) {
+        throw new Error(error)
+      }
     }
+
     fetchSizes()
   }, [])
 

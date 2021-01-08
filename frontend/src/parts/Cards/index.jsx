@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import sampleImage from '../../assets/images/sample-bg.jpg'
 import {
@@ -21,8 +21,9 @@ import useCardStyles from '../../styles/components/contentCard';
 
 export default function Cards({
   handleSelectedOption,
-  pizzaOptions,
   handleOptionsOfOptionsComponent,
+  pizzaOptions,
+  selectedOption,
   type
 }) {
   const cardClasses = useCardStyles()
@@ -47,6 +48,23 @@ export default function Cards({
     }
   }
 
+  const [isCardSelected, setIsCardSelected] = useState(false)
+  useEffect(() => {
+    const selectCard = () => {
+      if (selectedOption && pizzaOptions) {
+        let selectedOptionValues = Object.entries(selectedOption)
+
+        let selected = pizzaOptions.find(option => {
+          let optionValues = Object.entries(option)
+          return JSON.stringify(optionValues) === JSON.stringify(selectedOptionValues)
+        })
+
+        setIsCardSelected(selected)
+      }
+    }
+    selectCard()
+  }, [selectedOption, pizzaOptions])
+
   return (
     <Grid container className={cardClasses.cardGroup} justify="center">
 
@@ -59,7 +77,7 @@ export default function Cards({
               handleOptionsOfOptionsComponent && handleOptionsOfOptionsComponent(pizzaOption.name)
             }}
           >
-            <Card className={cardClasses.card}>
+            <Card className={`${cardClasses.card} ${pizzaOption === isCardSelected && cardClasses.cardSelected}`}>
               <CardActionArea>
                 <CardMedia
                   className={cardClasses.cardMedia}

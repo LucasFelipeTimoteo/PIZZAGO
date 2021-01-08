@@ -13,6 +13,12 @@ const useCardStyles = makeStyles({
       border: 'solid 1px #fff'
     }
   },
+
+  cardSelected: {
+    boxSizing: 'content-box',
+    border: 'solid 2px orange !important'
+  },
+
   cardMedia: {
     height: 200,
     minWidth: 312

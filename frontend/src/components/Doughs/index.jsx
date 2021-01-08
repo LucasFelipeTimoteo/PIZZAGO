@@ -6,7 +6,7 @@ import NavButtons from '../../parts/NavButtons';
 
 import useDoughs from '../../hooks/useDoughs';
 
-export default function Doughs({ step, prevStep, nextStep, handleSelectedDough }) {
+export default function Doughs({ step, prevStep, nextStep, handleSelectedDough, selectedDough }) {
   const doughs = useDoughs()
 
   if (step !== 2) {
@@ -16,7 +16,7 @@ export default function Doughs({ step, prevStep, nextStep, handleSelectedDough }
     <>
       <Suspense fallback={<p>Loading data...</p>}>
         <Titles componentName="Doughs" />
-        <Cards handleSelectedOption={handleSelectedDough} pizzaOptions={doughs} />
+        <Cards handleSelectedOption={handleSelectedDough} pizzaOptions={doughs} selectedOption={selectedDough} />
         <NavButtons step={step} prevStep={prevStep} nextStep={nextStep} />
       </Suspense>
     </>

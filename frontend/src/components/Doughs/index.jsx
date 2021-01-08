@@ -6,7 +6,14 @@ import NavButtons from '../../parts/NavButtons';
 
 import useDoughs from '../../hooks/useDoughs';
 
-export default function Doughs({ step, prevStep, nextStep, handleSelectedDough, selectedDough }) {
+export default function Doughs({
+  step,
+  prevStep,
+  nextStep,
+  handleSelectedDough,
+  selectedDough
+}) {
+
   const doughs = useDoughs()
 
   if (step !== 2) {

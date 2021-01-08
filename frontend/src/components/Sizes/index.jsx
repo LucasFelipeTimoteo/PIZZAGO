@@ -6,7 +6,13 @@ import NavButtons from '../../parts/NavButtons';
 
 import useSizes from '../../hooks/useSizes';
 
-export default function Sizes({ step, prevStep, nextStep, selectedSize, handleSelectedSize }) {
+export default function Sizes({ 
+  step, 
+  prevStep, 
+  nextStep, 
+  selectedSize, 
+  handleSelectedSize 
+}) {
   const sizes = useSizes()
 
   if (step !== 3) {

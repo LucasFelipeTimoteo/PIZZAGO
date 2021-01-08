@@ -10,10 +10,10 @@ export default function Options({ step, nextStep, recommendationStep }) {
   const options = useOptions()
 
   const handleOptionsCardClick = (name) => {
-    if(name === 'montar') {
+    if (name === 'montar') {
       nextStep()
     }
-    if(name === 'recomendada') {
+    if (name === 'recomendada') {
       recommendationStep()
     }
   }
@@ -25,7 +25,10 @@ export default function Options({ step, nextStep, recommendationStep }) {
     <>
       <Suspense fallback={<p>Loading data...</p>}>
         <Titles componentName="Options" />
-        <Cards pizzaOptions={options} handleOptionsOfOptionsComponent={handleOptionsCardClick} />
+        <Cards
+          pizzaOptions={options}
+          handleOptionsOfOptionsComponent={handleOptionsCardClick}
+        />
         <NavButtons step={step} />
       </Suspense>
     </>

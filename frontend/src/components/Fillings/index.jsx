@@ -6,7 +6,13 @@ import NavButtons from '../../parts/NavButtons';
 
 import useFillings from '../../hooks/useFillings';
 
-export default function Fillings({ step, prevStep, nextStep, selectedFilling, handleSelectedFilling }) {
+export default function Fillings({
+  step,
+  prevStep,
+  nextStep,
+  selectedFilling,
+  handleSelectedFilling
+}) {
   const fillings = useFillings()
 
   if (step !== 4) {

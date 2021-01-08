@@ -6,7 +6,7 @@ import NavButtons from '../../parts/NavButtons';
 
 import useFillings from '../../hooks/useFillings';
 
-export default function Fillings({ step, prevStep, nextStep, handleSelectedFilling }) {
+export default function Fillings({ step, prevStep, nextStep, selectedFilling, handleSelectedFilling }) {
   const fillings = useFillings()
 
   if (step !== 4) {
@@ -14,10 +14,18 @@ export default function Fillings({ step, prevStep, nextStep, handleSelectedFilli
   }
   return (
     <>
-      <Suspense fallback={<p>Loading data...</p>}> 
+      <Suspense fallback={<p>Loading data...</p>}>
         <Titles componentName="Fillings" />
-        <Cards pizzaOptions={fillings} handleSelectedOption={handleSelectedFilling} />
-        <NavButtons step={step} prevStep={prevStep} nextStep={nextStep} />
+        <Cards
+          handleSelectedOption={handleSelectedFilling}
+          pizzaOptions={fillings}
+          selectedOption={selectedFilling}
+        />
+        <NavButtons
+          step={step}
+          prevStep={prevStep}
+          nextStep={nextStep}
+        />
       </Suspense>
     </>
   );

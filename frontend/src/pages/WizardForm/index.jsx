@@ -46,9 +46,7 @@ export default function WizardForm() {
         recommendationStep={recommendationStep}
       />
 
-      <Recommendation
-        step={step}
-      />
+      <Recommendation step={step} />
 
       <Doughs
         step={step}

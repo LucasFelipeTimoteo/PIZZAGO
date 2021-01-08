@@ -16,8 +16,16 @@ export default function Doughs({ step, prevStep, nextStep, handleSelectedDough, 
     <>
       <Suspense fallback={<p>Loading data...</p>}>
         <Titles componentName="Doughs" />
-        <Cards handleSelectedOption={handleSelectedDough} pizzaOptions={doughs} selectedOption={selectedDough} />
-        <NavButtons step={step} prevStep={prevStep} nextStep={nextStep} />
+        <Cards
+          handleSelectedOption={handleSelectedDough}
+          pizzaOptions={doughs}
+          selectedOption={selectedDough}
+        />
+        <NavButtons
+          step={step}
+          prevStep={prevStep}
+          nextStep={nextStep}
+        />
       </Suspense>
     </>
   );

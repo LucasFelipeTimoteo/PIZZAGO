@@ -6,17 +6,20 @@ const useCardStyles = makeStyles({
   },
   card: {
     maxWidth: 345,
-    border: 'solid 1px #a0a0a082',
+    border: 'solid 1.4px #a0a0a082',
     margin: 20,
 
     '&:hover, &:focus-within': {
-      border: 'solid 1px #fff'
+      border: 'solid 1.4px #fff'
     }
   },
 
   cardSelected: {
-    boxSizing: 'content-box',
-    border: 'solid 2px orange !important'
+    border: 'solid 1.4px orange !important',
+
+    '& h2.MuiTypography-root': {
+      color: 'orange'
+    }
   },
 
   cardMedia: {

@@ -18,6 +18,7 @@ import {
 } from '@material-ui/core';
 
 import useCardStyles from '../../styles/components/contentCard';
+import useSelectedCard from '../../hooks/useSelectedCard';
 
 export default function Cards({
   handleSelectedOption,
@@ -27,6 +28,11 @@ export default function Cards({
   type
 }) {
   const cardClasses = useCardStyles()
+  const selectedCard = useSelectedCard(pizzaOptions, selectedOption)
+
+  const cardSelectedStyles = (pizzaOption) => (
+    pizzaOption === selectedCard && cardClasses.cardSelected
+  )
 
   const altName = () => {
     if (type === 'confirm') {
@@ -48,22 +54,22 @@ export default function Cards({
     }
   }
 
-  const [isCardSelected, setIsCardSelected] = useState(false)
-  useEffect(() => {
-    const selectCard = () => {
-      if (selectedOption && pizzaOptions) {
-        let selectedOptionValues = Object.entries(selectedOption)
+  // const [selectedCard, setSelectedCard] = useState({})
+  // useEffect(() => {
+  //   const selectCard = () => {
+  //     if (selectedOption && pizzaOptions) {
+  //       let selectedOptionValues = Object.entries(selectedOption)
 
-        let selected = pizzaOptions.find(option => {
-          let optionValues = Object.entries(option)
-          return JSON.stringify(optionValues) === JSON.stringify(selectedOptionValues)
-        })
+  //       let selected = pizzaOptions.find(option => {
+  //         let optionValues = Object.entries(option)
+  //         return JSON.stringify(optionValues) === JSON.stringify(selectedOptionValues)
+  //       })
 
-        setIsCardSelected(selected)
-      }
-    }
-    selectCard()
-  }, [selectedOption, pizzaOptions])
+  //       setSelectedCard(selected)
+  //     }
+  //   }
+  //   selectCard()
+  // }, [selectedOption, pizzaOptions, selectedCard])
 
   return (
     <Grid container className={cardClasses.cardGroup} justify="center">
@@ -77,7 +83,7 @@ export default function Cards({
               handleOptionsOfOptionsComponent && handleOptionsOfOptionsComponent(pizzaOption.name)
             }}
           >
-            <Card className={`${cardClasses.card} ${pizzaOption === isCardSelected && cardClasses.cardSelected}`}>
+            <Card className={`${cardClasses.card} ${cardSelectedStyles(pizzaOption)}`}>
               <CardActionArea>
                 <CardMedia
                   className={cardClasses.cardMedia}

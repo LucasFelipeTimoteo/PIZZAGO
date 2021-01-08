@@ -6,7 +6,7 @@ import NavButtons from '../../parts/NavButtons';
 
 import useSizes from '../../hooks/useSizes';
 
-export default function Sizes({ step, prevStep, nextStep, handleSelectedSize }) {
+export default function Sizes({ step, prevStep, nextStep, selectedSize, handleSelectedSize }) {
   const sizes = useSizes()
 
   if (step !== 3) {
@@ -16,8 +16,16 @@ export default function Sizes({ step, prevStep, nextStep, handleSelectedSize }) 
     <>
       <Suspense fallback={<p>Loading data...</p>}>
         <Titles componentName="Sizes" />
-        <Cards pizzaOptions={sizes} handleSelectedOption={handleSelectedSize} />
-        <NavButtons step={step} prevStep={prevStep} nextStep={nextStep} />
+        <Cards
+          pizzaOptions={sizes}
+          handleSelectedOption={handleSelectedSize}
+          selectedOption={selectedSize}
+        />
+        <NavButtons
+          step={step}
+          prevStep={prevStep}
+          nextStep={nextStep}
+        />
       </Suspense>
     </>
   );

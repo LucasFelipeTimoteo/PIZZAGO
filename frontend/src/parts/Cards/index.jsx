@@ -56,23 +56,6 @@ export default function Cards({
     }
   }
 
-  // const [selectedCard, setSelectedCard] = useState({})
-  // useEffect(() => {
-  //   const selectCard = () => {
-  //     if (selectedOption && pizzaOptions) {
-  //       let selectedOptionValues = Object.entries(selectedOption)
-
-  //       let selected = pizzaOptions.find(option => {
-  //         let optionValues = Object.entries(option)
-  //         return JSON.stringify(optionValues) === JSON.stringify(selectedOptionValues)
-  //       })
-
-  //       setSelectedCard(selected)
-  //     }
-  //   }
-  //   selectCard()
-  // }, [selectedOption, pizzaOptions, selectedCard])
-
   return (
     <Grid container className={cardClasses.cardGroup} justify="center">
 

@@ -14,13 +14,13 @@ const useCardStyles = makeStyles({
     }
   },
 
-  cardSelected: {
-    border: 'solid 1.4px orange !important',
+  cardSelected: theme => ({
+    border: `solid 1.4px ${theme ? theme.palette.primary.main : 'orange'} !important`,
 
     '& h2.MuiTypography-root': {
-      color: 'orange'
+      color:  theme ? theme.palette.primary.main : 'orange'
     }
-  },
+  }),
 
   cardMedia: {
     height: 200,

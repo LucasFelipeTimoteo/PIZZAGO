@@ -14,7 +14,8 @@ import {
   CardContent,
   CardMedia,
   Grid,
-  Typography
+  Typography,
+  useTheme
 } from '@material-ui/core';
 
 import useCardStyles from '../../styles/components/contentCard';
@@ -27,7 +28,8 @@ export default function Cards({
   selectedOption,
   type
 }) {
-  const cardClasses = useCardStyles()
+  const theme = useTheme()
+  const cardClasses = useCardStyles(theme)
   const selectedCard = useSelectedCard(pizzaOptions, selectedOption)
 
   const cardSelectedStyles = (pizzaOption) => (
@@ -39,7 +41,7 @@ export default function Cards({
       return confirmCardAltName
     }
 
-    if (type === 'option') {
+    if (type === 'option') { 
       return cardAltName
     }
   }

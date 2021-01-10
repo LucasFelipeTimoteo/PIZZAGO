@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import sampleImage from '../../assets/images/sample-bg.jpg'
 import {

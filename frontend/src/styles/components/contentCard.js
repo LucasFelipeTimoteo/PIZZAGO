@@ -7,10 +7,14 @@ const useCardStyles = makeStyles({
   card: {
     maxWidth: 345,
     border: 'solid 1.4px #a0a0a082',
-    margin: 20,
+    margin: 'clamp(0px, 1.5vw, 20px)',
 
     '&:hover, &:focus-within': {
       border: 'solid 1.4px #fff'
+    },
+
+    '& .MuiPaper-root': {
+      minWidth: '270px'
     }
   },
 

@@ -18,7 +18,7 @@ import {
   useTheme
 } from '@material-ui/core';
 
-import useCardStyles from '../../styles/components/contentCard';
+import useCardStyles from '../../styles/parts/contentCard';
 import useSelectedCard from '../../hooks/useSelectedCard';
 
 export default function Cards({

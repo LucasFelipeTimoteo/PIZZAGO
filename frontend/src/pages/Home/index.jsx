@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { Button, Container, Typography } from '@material-ui/core'
+import { Button, Container, Typography, useTheme } from '@material-ui/core'
 
 import useHomeStyles from '../../styles/pages/home'
 
 export default function Home() {
-  const classes = useHomeStyles()
+  const theme = useTheme()
+  const classes = useHomeStyles(theme)
 
   return (
     <div className={classes.homeWrapper}>

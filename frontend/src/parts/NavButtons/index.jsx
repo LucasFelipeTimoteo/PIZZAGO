@@ -14,7 +14,7 @@ import {
   Check as CheckIcon
 } from '@material-ui/icons'
 
-import useNavButtonsStyles from '../../styles/components/navButtons'
+import useNavButtonsStyles from '../../styles/parts/navButtons'
 
 export default function NavButtons({
   step,

@@ -11,10 +11,6 @@ const useCardStyles = makeStyles({
 
     '&:hover, &:focus-within': {
       border: 'solid 1.4px #fff'
-    },
-
-    '& .MuiPaper-root': {
-      minWidth: '270px'
     }
   },
 

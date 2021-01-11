@@ -1,6 +1,6 @@
 import { Typography } from '@material-ui/core'
 import React from 'react'
-import useTitleStyles from '../../styles/components/titlles';
+import useTitleStyles from '../../styles/parts/titlles';
 
 export default function Titles({ componentName }) {
   const titleClasses = useTitleStyles()

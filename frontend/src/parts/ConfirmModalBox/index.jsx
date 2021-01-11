@@ -1,7 +1,7 @@
 import React from 'react'
 import { Dialog, Typography } from '@material-ui/core'
 
-import useModalBoxStyles from '../../styles/components/confirmModalBox'
+import useModalBoxStyles from '../../styles/parts/confirmModalBox'
 import usePoints from '../../hooks/usePoints'
 
 import NavButtons from '../NavButtons'

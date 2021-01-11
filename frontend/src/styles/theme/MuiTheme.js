@@ -1,7 +1,7 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 import { orange } from "@material-ui/core/colors";
 
-const MuiTheme = createMuiTheme({
+let MuiTheme = createMuiTheme({
   palette: {
     primary: {
       main: orange[500]
@@ -10,5 +10,6 @@ const MuiTheme = createMuiTheme({
   }
 })
 
-export default MuiTheme
+MuiTheme = responsiveFontSizes(MuiTheme);
 
+export default MuiTheme

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Dialog, Typography } from '@material-ui/core'
+import { Dialog, DialogContent, Typography } from '@material-ui/core'
 
 import useModalBoxStyles from '../../styles/parts/confirmModalBox'
 import usePoints from '../../hooks/usePoints'
@@ -14,8 +14,9 @@ export default function ConfirmModalBox({ isOpenModalBox, isRecommendation }) {
     <>
       <Dialog
         open={isOpenModalBox}
+        className={modalBoxClasses.dialog}
       >
-        <div className={modalBoxClasses.modalBoxContainer}>
+        <DialogContent className={modalBoxClasses.modalBoxContainer}>
           <Typography
             variant="h3"
             component="h2"
@@ -23,7 +24,7 @@ export default function ConfirmModalBox({ isOpenModalBox, isRecommendation }) {
           >
             Sucesso!
           </Typography>
-          <Typography variant="body1" component="p">
+          <Typography variant="body2" component="p">
             seu pedido foi realizado
           </Typography>
 
@@ -33,13 +34,13 @@ export default function ConfirmModalBox({ isOpenModalBox, isRecommendation }) {
               <Typography variant="h5" component="h3">
                 Parabéns
               </Typography>
-              <Typography variant="body1" component="p">
+              <Typography variant="body2" component="p">
                 { pointsMessage }
               </Typography>
             </>
           }
           <NavButtons modalBox />
-        </div>
+        </DialogContent>
       </Dialog>
     </>
   )

@@ -6,12 +6,16 @@ const useHomeStyles = makeStyles({
   homeWrapper: {
     display: 'grid',
     placeItems: 'center',
-    background: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat",
     backgroundSize: 'cover',
     width: '100vw',
     height: '100vh',
     objectFit: 'contain',
     color: 'white',
+    background: `linear-gradient(
+                    rgba(0, 0, 0, 0.3), 
+                    rgba(0, 0, 0, 0.3)
+                    ),
+                    url('https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat`,
   },
 
   logo: {

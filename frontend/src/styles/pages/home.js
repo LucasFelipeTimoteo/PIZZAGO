@@ -3,20 +3,16 @@ import 'fontsource-roboto';
 import 'fontsource-ewert'
 
 const useHomeStyles = makeStyles({
-  homeWrapper: theme => ({
+  homeWrapper: {
     display: 'grid',
     placeItems: 'center',
-    background: "url('https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat",
-    backgroundPosition: 'cover',
+    background: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat",
+    backgroundSize: 'cover',
     width: '100vw',
     height: '100vh',
     objectFit: 'contain',
     color: 'white',
-
-    // [theme.breakpoints.down('sm')]: {
-    //   background: 'url(https://images.pexels.com/photos/4394612/pexels-photo-4394612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500)'
-    // }
-  }),
+  },
 
   logo: {
     fontFamily: 'Ewert, cursive',

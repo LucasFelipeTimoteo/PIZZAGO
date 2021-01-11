@@ -1,10 +1,10 @@
 ![Logo](./.github/assets/images/logo.png)
 
 ## Mount your own pizza! 🏗
-![monting your pizza GIF demo](./.github/assets/gifs/mountingPizza.gif)
+![monting your pizza GIF demo](./.github/assets/videos/mountingPizza.webm)
 
 ## Select recommendation to earn benefit points! ✨
-![monting your pizza GIF demo](./.github/assets/gifs/recommendedPizza.gif)
+![monting your pizza GIF demo](./.github/assets/videos/recommendedPizza.webm)
 
 ----
 
